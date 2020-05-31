@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [[ `find . -iname converter` ]]; then
+	make clean
+fi
+make
+if [[ $? != 2 ]]; then
+	echo
+	echo "Compiled successfully!"
+	echo
+	./converter
+else
+	echo;echo "`whoami` You have failed this city! badzium! badzium!"
+fi
