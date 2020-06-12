@@ -14,20 +14,22 @@ module csa(
 	input [0:7]b,
 	input [0:7]c,
 	output [0:7]ps,
-	output sc
+	output [0:1]sc
 	);
-	wire [0:8]sum;
+	wire [0:9]sum;
 
 	assign sum = a + b + c;
-	assign ps[0] = sum[1];
-	assign ps[1] = sum[2];
-	assign ps[2] = sum[3];
-	assign ps[3] = sum[4];
-	assign ps[4] = sum[5];
-	assign ps[5] = sum[6];
-	assign ps[6] = sum[7];
-	assign ps[7] = sum[8];
-	assign sc = sum[0];
+	assign ps[0] = sum[2];
+	assign ps[1] = sum[3];
+	assign ps[2] = sum[4];
+	assign ps[3] = sum[5];
+	assign ps[4] = sum[6];
+	assign ps[5] = sum[7];
+	assign ps[6] = sum[8];
+	assign ps[7] = sum[9];
+
+	assign sc[0] = sum[0];
+	assign sc[1] = sum[1];
 endmodule
 
 //8bit modulo adder with defined m
@@ -99,7 +101,9 @@ module converter(
 	wire [0:7]ps;
 	wire [0:7]ps2;
 	wire [0:7]ps3;
-	wire sc, sc2, sc3;
+	wire [0:1]sc;
+	wire [0:1]sc2;
+	wire [0:1]sc3;
 	wire [0:7]k;
 
 	assign k = k2 + k3 + k4;
