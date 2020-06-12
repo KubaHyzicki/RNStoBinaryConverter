@@ -1,10 +1,6 @@
-/* RNS to binary converter module
-input: R1, R2, R3, R4, n, p
-where R* are RNS residues, n and p are a positive integers and 0≤p≤n-2 from which moduli set will be generated in following way {2^n-1, 2^n+1, 2^(2n)+1, 2^(2n+p)}
-output: X
-where X is a binary format of converted number
-
-compiled via iverilog -o converter converter.v
+/*
+WARNING!!!
+Version outdated
 */
 
 module concate4(
